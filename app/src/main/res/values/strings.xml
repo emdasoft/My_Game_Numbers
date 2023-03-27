@@ -15,4 +15,5 @@
         and the other is a question mark. So the number 3 should be in place of the question mark.
         (because 3 + 4 = 7)
     </string>
+    <string name="choose_level_title">Choose the difficulty level</string>
 </resources>

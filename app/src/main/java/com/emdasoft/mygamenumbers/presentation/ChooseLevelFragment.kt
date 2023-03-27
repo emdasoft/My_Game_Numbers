@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.databinding.FragmentChooseLevelBinding
+import com.emdasoft.mygamenumbers.domain.entity.Level
 
 class ChooseLevelFragment : Fragment() {
 
@@ -19,6 +21,31 @@ class ChooseLevelFragment : Fragment() {
     ): View {
         _binding = FragmentChooseLevelBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        with(binding) {
+            testLevelButton.setOnClickListener {
+                launchGameFragment(Level.TEST)
+            }
+            easyLevelButton.setOnClickListener {
+                launchGameFragment(Level.EASY)
+            }
+            normalLevelButton.setOnClickListener {
+                launchGameFragment(Level.NORMAL)
+            }
+            hardLevelButton.setOnClickListener {
+                launchGameFragment(Level.HARD)
+            }
+        }
+    }
+
+    private fun launchGameFragment(level: Level) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, GameFragment.newInstance(level))
+            .addToBackStack(GameFragment.FRAGMENT_NAME)
+            .commit()
     }
 
     override fun onDestroyView() {

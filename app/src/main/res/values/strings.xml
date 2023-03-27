@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">My Game Numbers</string>
+    <string name="app_name" translatable="false">My Game Numbers</string>
+    <string name="go_button">Go</string>
+    <string name="rules">
+        Number composition game for preschoolers. \n
+        Purpose: To improve knowledge about the composition of the studied numbers.
+        Build the ability to present numbers as the sum of two terms (based on visibility). \n
+        Rules of the game: there will be three figures in front of you,
+        two from below and one from above.
+        Two of them will have numbers. It is necessary that the sum of the numbers
+        from the two lower figures be equal to
+        number in the top figure, for this you need to select the missing number
+        (term) from the answer options. \n
+        Example in the upper circle is the number 7, in one of the lower squares the number is 4,
+        and the other is a question mark. So the number 3 should be in place of the question mark.
+        (because 3 + 4 = 7)
+    </string>
 </resources>

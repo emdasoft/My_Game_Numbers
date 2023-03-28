@@ -41,18 +41,18 @@ object GameRepositoryImpl : GameRepository {
             }
             Level.EASY -> {
                 GameSettings(
-                    20,
                     10,
-                    80,
-                    90
+                    10,
+                    50,
+                    300
                 )
             }
             Level.NORMAL -> {
                 GameSettings(
-                    50,
+                    20,
                     15,
                     80,
-                    60
+                    300
                 )
             }
             Level.HARD -> {
@@ -60,7 +60,7 @@ object GameRepositoryImpl : GameRepository {
                     100,
                     20,
                     80,
-                    30
+                    300
                 )
             }
         }

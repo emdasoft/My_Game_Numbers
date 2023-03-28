@@ -21,7 +21,7 @@
         android:id="@+id/test_level_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Тестовый"
+        android:text="@string/test_label"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_blue_light"
-        android:text="Легкий"
+        android:text="@string/easy_label"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="Средний"
+        android:text="@string/normal_label"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_light"
-        android:text="Тяжелый"
+        android:text="@string/hard_label"
         />
 
 

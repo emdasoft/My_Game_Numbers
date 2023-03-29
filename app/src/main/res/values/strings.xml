@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">My Game Numbers</string>
+    <string name="app_name">Numbers</string>
     <string name="go_button">Go</string>
     <string name="title">Number composition game</string>
     <string name="rules">

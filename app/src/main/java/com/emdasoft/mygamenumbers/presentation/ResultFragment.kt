@@ -65,7 +65,7 @@ class ResultFragment : Fragment() {
         if (countOfQuestions == 0) {
             0
         } else {
-            ((countOfRightAnswers / countOfRightAnswers.toDouble()) * 100).toInt()
+            ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
         }
     }
 

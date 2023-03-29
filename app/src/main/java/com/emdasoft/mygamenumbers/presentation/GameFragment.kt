@@ -11,7 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.databinding.FragmentGameBinding
+import com.emdasoft.mygamenumbers.domain.entity.GameResult
 import com.emdasoft.mygamenumbers.domain.entity.Level
+import com.emdasoft.mygamenumbers.domain.entity.Question
 
 class GameFragment : Fragment() {
 
@@ -34,7 +36,6 @@ class GameFragment : Fragment() {
             add(binding.tvOption6)
         }
     }
-
 
     private var _binding: FragmentGameBinding? = null
     private val binding: FragmentGameBinding
@@ -66,13 +67,7 @@ class GameFragment : Fragment() {
 
     private fun viewModelObserve() {
         viewModel.question.observe(viewLifecycleOwner) {
-            with(binding) {
-                tvSum.text = it.sum.toString()
-                tvLeftNumber.text = it.visibleNumber.toString()
-                for (i in 0 until tvOptions.size) {
-                    tvOptions[i].text = it.options[i].toString()
-                }
-            }
+            showQuestion(it)
         }
 
         viewModel.progressAnswers.observe(viewLifecycleOwner) {
@@ -102,12 +97,26 @@ class GameFragment : Fragment() {
         }
 
         viewModel.gameResult.observe(viewLifecycleOwner) {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.main_container, ResultFragment.newInstance(it))
-                .addToBackStack(null)
-                .commit()
+            launchResultFragment(it)
         }
 
+    }
+
+    private fun showQuestion(it: Question) {
+        with(binding) {
+            tvSum.text = it.sum.toString()
+            tvLeftNumber.text = it.visibleNumber.toString()
+            for (i in 0 until tvOptions.size) {
+                tvOptions[i].text = it.options[i].toString()
+            }
+        }
+    }
+
+    private fun launchResultFragment(it: GameResult) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, ResultFragment.newInstance(it))
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun getColorByState(it: Boolean): Int {

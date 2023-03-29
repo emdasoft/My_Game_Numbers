@@ -87,7 +87,6 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
             override fun onFinish() {
                 finishGame()
             }
-
         }
         timer?.start()
     }

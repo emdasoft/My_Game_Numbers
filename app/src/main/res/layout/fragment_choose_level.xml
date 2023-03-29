@@ -7,6 +7,11 @@
     android:layout_gravity="center"
     tools:context=".presentation.ChooseLevelFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/choose_level"/>
+
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

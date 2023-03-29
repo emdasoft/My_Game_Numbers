@@ -11,7 +11,7 @@
         android:id="@+id/image_smile"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:src="@drawable/sad_smile"
+        android:src="@drawable/fun_smile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

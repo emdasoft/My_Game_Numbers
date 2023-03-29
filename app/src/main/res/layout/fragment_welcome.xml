@@ -14,38 +14,41 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:contentDescription="logo image"
             android:src="@drawable/logo"
-            android:layout_gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/tvTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvTitle"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="24sp"
-            android:text="@string/title"
             android:gravity="center"
+            android:text="@string/title"
             android:textColor="@color/main_dark"
-            app:layout_constraintTop_toBottomOf="@id/imageView"/>
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_rules"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         <TextView
+            android:id="@+id/tv_rules"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:textSize="16sp"
-            android:textColor="@color/main_light"
+            android:layout_marginTop="16dp"
             android:text="@string/rules"
+            android:textColor="@color/main_light"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <com.google.android.material.button.MaterialButton
@@ -56,8 +59,8 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/main_red"
-            android:textColor="@color/white"
             android:text="@string/go_button"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

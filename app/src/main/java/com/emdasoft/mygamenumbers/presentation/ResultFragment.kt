@@ -28,10 +28,6 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClickListeners()
-        bindViews()
-    }
-
-    private fun bindViews() {
         binding.result = args.result
     }
 

@@ -3,23 +3,23 @@
     <string name="go_button">Go</string>
     <string name="title">Number composition game</string>
     <string name="rules">
-        Purpose: To improve knowledge about the composition of the studied numbers.
-        Build the ability to present numbers as the sum of two terms (based on visibility). \n
+        Purpose: To improve knowledge about the composition of the studied numbers and
+        build the ability to present numbers as the sum of two terms (based on visibility). \n\n
         Rules of the game: there will be three figures in front of you,
         two from below and one from above.
         Two of them will have numbers. It is necessary that the sum of the numbers
         from the two lower figures be equal to
         number in the top figure, for this you need to select the missing number
-        (term) from the answer options. \n
+        (term) from the answer options. \n\n
         Example in the upper circle is the number 7, in one of the lower squares the number is 4,
         and the other is a question mark. So the number 3 should be in place of the question mark.
         (because 3 + 4 = 7)
     </string>
     <string name="choose_level_title">Choose the difficulty level</string>
     <string name="test_label">Test level</string>
-    <string name="easy_label">Easy level (0..10) </string>
-    <string name="normal_label">Normal level (0..20) </string>
-    <string name="hard_label">Hard level (0..100) </string>
+    <string name="easy_label">Easy level </string>
+    <string name="normal_label">Normal level </string>
+    <string name="hard_label">Hard level </string>
     <string name="tv_required_answer">Required number of correct answers: %s</string>
     <string name="tv_score_answer">Your score: %s</string>
     <string name="tv_required_percent">Required correct percentage: %s</string>
@@ -27,4 +27,9 @@
     <string name="retry_button">Retry game</string>
     <string name="question_mark">\?</string>
     <string name="progress_answers">correct answers: %s (minimum: %s)</string>
+    <string name="mini_rules">
+        Easy level: sum of number up to <b>10</b> \n
+        Normal level: sum of number up to <b>20</b> \n
+        Hard level: sum of number up to <b>100</b>
+    </string>
 </resources>

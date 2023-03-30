@@ -26,9 +26,6 @@ class ChooseLevelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
-            testLevelButton.setOnClickListener {
-                launchGameFragment(Level.TEST)
-            }
             easyLevelButton.setOnClickListener {
                 launchGameFragment(Level.EASY)
             }

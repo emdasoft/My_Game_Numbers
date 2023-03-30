@@ -31,14 +31,6 @@ object GameRepositoryImpl : GameRepository {
 
     override fun getGameSettings(level: Level): GameSettings {
         return when (level) {
-            Level.TEST -> {
-                GameSettings(
-                    10,
-                    3,
-                    50,
-                    8
-                )
-            }
             Level.EASY -> {
                 GameSettings(
                     10,
@@ -59,8 +51,8 @@ object GameRepositoryImpl : GameRepository {
                 GameSettings(
                     100,
                     20,
-                    80,
-                    60
+                    90,
+                    90
                 )
             }
         }

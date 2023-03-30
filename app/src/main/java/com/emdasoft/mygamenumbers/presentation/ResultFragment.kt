@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment() {
@@ -29,38 +28,11 @@ class ResultFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClickListeners()
-        with(binding) {
-            imageSmile.setImageResource(getSmileResId())
-            tvRequiredAnswer.text = String.format(
-                getString(R.string.tv_required_answer),
-                args.result.gameSettings.minCountOfRightAnswers
-            )
-            tvScoreAnswer.text =
-                String.format(getString(R.string.tv_score_answer), args.result.countOfRightAnswers)
-            tvRequiredPercent.text = String.format(
-                getString(R.string.tv_required_percent),
-                args.result.gameSettings.minPercentOfRightAnswers
-            )
-            tvScorePercent.text = String.format(
-                getString(R.string.tv_score_percent), getPercentOfRightAnswers()
-            )
-        }
+        bindViews()
     }
 
-    private fun getSmileResId(): Int {
-        return if (args.result.winner) {
-            R.drawable.fun_smile
-        } else {
-            R.drawable.sad_smile
-        }
-    }
-
-    private fun getPercentOfRightAnswers() = with(args.result) {
-        if (countOfQuestions == 0) {
-            0
-        } else {
-            ((countOfRightAnswers / countOfQuestions.toDouble()) * 100).toInt()
-        }
+    private fun bindViews() {
+        binding.result = args.result
     }
 
     private fun setOnClickListeners() {

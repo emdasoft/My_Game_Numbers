@@ -5,6 +5,7 @@
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginEnd">16dp</item>
         <item name="android:width">48dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <style name="ResultTextView">
         <item name="android:textSize">16sp</item>
@@ -18,6 +19,7 @@
         <item name="android:textSize">48sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">8dp</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
     <style name="OptionsStyle">
@@ -25,5 +27,6 @@
         <item name="android:textSize">36sp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

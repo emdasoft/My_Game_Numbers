@@ -9,18 +9,18 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.emdasoft.mygamenumbers.R
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.emdasoft.mygamenumbers.databinding.FragmentGameBinding
 import com.emdasoft.mygamenumbers.domain.entity.GameResult
-import com.emdasoft.mygamenumbers.domain.entity.Level
 import com.emdasoft.mygamenumbers.domain.entity.Question
 
 class GameFragment : Fragment() {
 
-    private lateinit var level: Level
+    private val args by navArgs<GameFragmentArgs>()
 
     private val viewModelFactory by lazy {
-        GameViewModelFactory(level, requireActivity().application)
+        GameViewModelFactory(args.level, requireActivity().application)
     }
 
     private val viewModel by lazy {
@@ -42,11 +42,6 @@ class GameFragment : Fragment() {
     private val binding: FragmentGameBinding
         get() = _binding ?: throw RuntimeException("FragmentGameBinding = null")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        parseArgs()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -62,12 +57,6 @@ class GameFragment : Fragment() {
 
         viewModelObserve()
 
-    }
-
-    private fun parseArgs() {
-        requireArguments().getParcelable<Level>(KEY_LEVEL)?.let {
-            level = it
-        }
     }
 
     private fun viewModelObserve() {
@@ -117,11 +106,8 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun launchResultFragment(it: GameResult) {
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, ResultFragment.newInstance(it))
-            .addToBackStack(null)
-            .commit()
+    private fun launchResultFragment(result: GameResult) {
+        findNavController().navigate(GameFragmentDirections.actionGameFragmentToResultFragment(result))
     }
 
     private fun getColorByState(it: Boolean): Int {
@@ -146,18 +132,4 @@ class GameFragment : Fragment() {
         _binding = null
     }
 
-    companion object {
-
-        private const val KEY_LEVEL = "level"
-        const val FRAGMENT_NAME = "GameFragment"
-
-        @JvmStatic
-        fun newInstance(level: Level): GameFragment {
-            return GameFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(KEY_LEVEL, level)
-                }
-            }
-        }
-    }
 }

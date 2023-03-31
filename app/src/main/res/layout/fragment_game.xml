@@ -79,10 +79,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_green_light"
+            android:text="@{viewModel.question.options.get(0).toString()}"
             app:layout_constraintBottom_toTopOf="@id/tv_option_4"
             app:layout_constraintEnd_toStartOf="@id/tv_option_5"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="1" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -91,9 +93,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_orange_light"
+            android:text="@{viewModel.question.options.get(1).toString()}"
             app:layout_constraintBottom_toTopOf="@id/tv_option_4"
             app:layout_constraintEnd_toStartOf="@id/tv_option_6"
             app:layout_constraintStart_toEndOf="@id/tv_option_4"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="2" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -102,9 +106,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_purple"
+            android:text="@{viewModel.question.options.get(2).toString()}"
             app:layout_constraintBottom_toTopOf="@id/tv_option_4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_option_5"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="3" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -113,9 +119,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_blue_light"
+            android:text="@{viewModel.question.options.get(3).toString()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_option_5"
             app:layout_constraintStart_toStartOf="parent"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="4" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -124,9 +132,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_red_light"
+            android:text="@{viewModel.question.options.get(4).toString()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_option_6"
             app:layout_constraintStart_toEndOf="@id/tv_option_4"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="5" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -135,9 +145,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_blue_bright"
+            android:text="@{viewModel.question.options.get(5).toString()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_option_5"
+            app:onOptionClickListener="@{(option) -> viewModel.chooseAnswer(option)}"
             tools:text="6" />
 
         <com.google.android.material.textview.MaterialTextView

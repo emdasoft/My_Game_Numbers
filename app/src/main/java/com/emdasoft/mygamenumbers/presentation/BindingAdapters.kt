@@ -9,7 +9,10 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.domain.entity.GameResult
-import com.emdasoft.mygamenumbers.domain.entity.Question
+
+interface OnOptionClickListener {
+    fun onOptionClick(option: Int)
+}
 
 @BindingAdapter("requiredAnswer")
 fun bindRequiredAnswer(textView: TextView, count: Int) {
@@ -68,6 +71,13 @@ fun bindEnoughPercent(progressBar: ProgressBar, state: Boolean) {
 fun bindEnoughCount(textView: TextView, state: Boolean) {
     val color = getColorByState(textView.context, state)
     textView.setTextColor(color)
+}
+
+@BindingAdapter("onOptionClickListener")
+fun bindOnOptionClickListener(textView: TextView, clickListener: OnOptionClickListener) {
+    textView.setOnClickListener {
+        clickListener.onOptionClick(textView.text.toString().toInt())
+    }
 }
 
 private fun getPercentOfRightAnswers(result: GameResult) = with(result) {

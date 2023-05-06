@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,8 +17,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:contentDescription="@string/logo_image_desc"
             android:layout_height="220dp"
+            android:contentDescription="@string/logo_image_desc"
             android:src="@drawable/choose_level"
             tools:ignore="ImageContrastCheck" />
 
@@ -62,6 +63,14 @@
             android:gravity="center"
             android:text="@string/mini_rules"
             android:textSize="14sp" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     </LinearLayout>
 

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.databinding.FragmentGameBinding
 import com.emdasoft.mygamenumbers.domain.entity.GameResult
 import com.emdasoft.mygamenumbers.domain.entity.Question
@@ -112,7 +113,7 @@ class GameFragment : Fragment() {
 
     private fun getColorByState(it: Boolean): Int {
         val colorResId = if (it) {
-            android.R.color.holo_green_light
+            R.color.option_three
         } else {
             android.R.color.holo_red_light
         }

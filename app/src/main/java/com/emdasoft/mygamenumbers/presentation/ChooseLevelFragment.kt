@@ -38,6 +38,11 @@ class ChooseLevelFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
+    }
+
     private fun launchGameFragment(level: Level) {
         findNavController().navigate(
             ChooseLevelFragmentDirections.actionChooseLevelFragmentToGameFragment(
@@ -45,10 +50,4 @@ class ChooseLevelFragment : Fragment() {
             )
         )
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }

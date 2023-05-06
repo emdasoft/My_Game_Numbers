@@ -2,15 +2,19 @@
     <string name="app_name">Numbers</string>
     <string name="go_button">Go</string>
     <string name="title">Number composition game</string>
-    <string name="rules">
+    <string name="target">
         Purpose: To improve knowledge about the composition of the studied numbers and
-        build the ability to present numbers as the sum of two terms (based on visibility). \n\n
+        build the ability to present numbers as the sum of two terms (based on visibility).
+    </string>
+    <string name="rules">
         Rules of the game: there will be three figures in front of you,
         two from below and one from above.
         Two of them will have numbers. It is necessary that the sum of the numbers
         from the two lower figures be equal to
         number in the top figure, for this you need to select the missing number
-        (term) from the answer options. \n\n
+        (term) from the answer options.
+    </string>
+    <string name="example">
         Example in the upper circle is the number 7, in one of the lower squares the number is 4,
         and the other is a question mark. So the number 3 should be in place of the question mark.
         (because 3 + 4 = 7)
@@ -32,4 +36,6 @@
         Normal level: sum of number up to <b>20</b> \n
         Hard level: sum of number up to <b>100</b>
     </string>
+    <string name="result_image_desc">result image</string>
+    <string name="logo_image_desc">logo image</string>
 </resources>

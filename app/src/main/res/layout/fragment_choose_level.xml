@@ -16,6 +16,7 @@
 
         <ImageView
             android:layout_width="match_parent"
+            android:contentDescription="@string/logo_image_desc"
             android:layout_height="220dp"
             android:src="@drawable/choose_level"
             tools:ignore="ImageContrastCheck" />
@@ -33,24 +34,27 @@
             style="@style/LevelButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_blue_light"
-            android:text="@string/easy_label" />
+            android:backgroundTint="@color/option_two"
+            android:text="@string/easy_label"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/normal_level_button"
             style="@style/LevelButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_green_light"
-            android:text="@string/normal_label" />
+            android:backgroundTint="@color/option_three"
+            android:text="@string/normal_label"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/hard_level_button"
             style="@style/LevelButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_light"
-            android:text="@string/hard_label" />
+            android:backgroundTint="@color/main_red_v2"
+            android:text="@string/hard_label"
+            tools:ignore="VisualLintButtonSize" />
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"

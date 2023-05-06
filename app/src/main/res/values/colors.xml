@@ -3,8 +3,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_red">#ff735c</color>
+    <color name="main_red_v2">#FF5C42</color>
     <color name="main_dark">#1a2e35</color>
     <color name="main_light">#385a64</color>
+    <color name="main_light_v2">#546E7A</color>
     <color name="sum_back">#127bb5</color>
-    00477b
+    <color name="option_one">#BA2F27</color>
+    <color name="option_two">#527ADE</color>
+    <color name="option_three">#44850f</color>
+    <color name="option_four">#984DBF</color>
+    <color name="option_five">#0f7d85</color>
+
 </resources>

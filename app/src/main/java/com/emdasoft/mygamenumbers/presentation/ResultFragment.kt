@@ -9,10 +9,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.emdasoft.mygamenumbers.R
 import com.emdasoft.mygamenumbers.databinding.FragmentResultBinding
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 
 class ResultFragment : Fragment() {
 
     private val args by navArgs<ResultFragmentArgs>()
+
+    private var mAdViewResult: AdView? = null
 
     private var _binding: FragmentResultBinding? = null
     private val binding: FragmentResultBinding
@@ -23,7 +27,14 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
+        initAdViewForResult()
         return binding.root
+    }
+
+    private fun initAdViewForResult() {
+        mAdViewResult = binding.adViewResult
+        val adRequest = AdRequest.Builder().build()
+        mAdViewResult?.loadAd(adRequest)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,6 +56,17 @@ class ResultFragment : Fragment() {
                 getString(R.string.tv_score_percent), getPercentOfRightAnswers()
             )
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mAdViewResult?.resume()
+    }
+
+    override fun onPause() {
+        mAdViewResult?.pause()
+        super.onPause()
+
     }
 
     private fun getSmileResId(): Int {
@@ -74,8 +96,9 @@ class ResultFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
+        mAdViewResult?.destroy()
         _binding = null
+        super.onDestroyView()
     }
 
 }

@@ -61,16 +61,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/main_dark"
+            android:layout_marginBottom="16dp"
             android:text="@string/mini_rules"
             android:textSize="14sp" />
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adViewLevel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
     </LinearLayout>
 
